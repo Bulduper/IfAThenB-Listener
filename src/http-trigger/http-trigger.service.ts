@@ -29,13 +29,13 @@ export class HttpTriggerService {
 
   findTrigger(triggerName: string): Observable<any> {
     return this.httpService
-      .get(`http://${process.env.BACKEND_HOST}:3000/trigger/${triggerName}`)
+      .get(`http://${process.env.BACKEND_HOST}:${process.env.BACKEND_PORT}/trigger/${triggerName}`)
       .pipe(map((res) => res.data));
   }
 
   getTriggers(): Observable<any> {
     return this.httpService
-      .get(`http://${process.env.BACKEND_HOST}:3000/trigger`)
+      .get(`http://${process.env.BACKEND_HOST}:${process.env.BACKEND_PORT}/trigger`)
       .pipe(map((res) => res.data));
   }
 }

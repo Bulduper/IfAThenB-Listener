@@ -12,7 +12,7 @@ export class ActionService {
 
   findActionById(actionId: any): Observable<any> {
     return this.httpService
-      .get(`http://${process.env.BACKEND_HOST}:3000/action/${actionId}`)
+      .get(`http://${process.env.BACKEND_HOST}:${process.env.BACKEND_PORT}/action/${actionId}`)
       .pipe(map((res) => res.data));
   }
 

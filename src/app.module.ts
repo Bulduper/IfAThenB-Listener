@@ -18,7 +18,7 @@ import { CronTasksService } from './cron-tasks/cron-tasks.service';
       {
         name: 'EXECUTOR_SERVICE',
         transport: Transport.TCP,
-        options: { port: 3003, host: process.env.EXECUTOR_HOST },
+        options: { port: +process.env.EXECUTOR_TCP_PORT, host: process.env.EXECUTOR_HOST },
       },
     ]),
     ScheduleModule.forRoot(),
